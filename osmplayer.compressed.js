@@ -219,3 +219,4 @@ osmplayer.pager.prototype.construct=function(){minplayer.display.prototype.const
 osmplayer.teaser=function(a,b){this.preview=null;minplayer.display.call(this,"teaser",a,b)};osmplayer.teaser.prototype=new minplayer.display;osmplayer.teaser.prototype.constructor=osmplayer.teaser;osmplayer.teaser.prototype.select=function(a){};
 osmplayer.teaser.prototype.setNode=function(a){this.node=a;this.elements.title&&(a.title?this.elements.title.text(a.title):osmplayer.getNode(a,function(a){return function(c){a.elements.title.text(c.title)}}(this)));a.mediafiles&&osmplayer.getImage(a.mediafiles,"thumbnail",function(a){return function(c){c&&a.elements.image&&(a.preview=new minplayer.image(a.elements.image),a.preview.load(c.path))}}(this));this.display.unbind("click").click(function(a){return function(c){c.preventDefault();a.trigger("nodeLoad",
 a.node)}}(this))};
+
